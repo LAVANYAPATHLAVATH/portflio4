@@ -183,6 +183,24 @@
   .hero-cta {
     display: flex; gap: 1rem; flex-wrap: wrap;
   }
+
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .project-actions a {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .btn-primary {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--accent); color: #fff;
@@ -476,6 +494,77 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
+
+/* ===== RESUME & CERTIFICATE CARDS ===== */
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.document-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(124,58,237,0.15);
+}
+
+.document-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.document-card h3 {
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.document-card p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+}
+
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.document-actions a {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 7px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.document-actions a:hover {
+  background: #6D28D9;
+}
+
+#resume {
+  background: var(--bg2);
+}
+
+/* Keep document cards visible even if scroll animation fails */
+.document-card.fade-up {
+  opacity: 1;
+  transform: none;
+}
+
 </style>
 </head>
 <body>
@@ -489,6 +578,8 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#certifications">Certificates</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -506,6 +597,8 @@
   <a href="#projects" onclick="closeMobile()">Projects</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
   <a href="#education" onclick="closeMobile()">Education</a>
+  <a href="#resume" onclick="closeMobile()">Resume</a>
+  <a href="#certifications" onclick="closeMobile()">Certificates</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -544,7 +637,7 @@
     <h2 class="section-title fade-up">Driven by curiosity,<br>powered by code.</h2>
     <div class="divider fade-up"></div>
     <p class="section-sub fade-up" style="margin-bottom:0">
-      I'm a B.Tech CSE graduate from AAR Mahaveer Engineering College, Hyderabad (2022–2026), passionate about solving real-world problems using Python, AI/ML, and Computer Vision. I thrive at the intersection of technology and creativity — building systems that are not just functional, but impactful. From detecting driver fatigue to generating AI-powered mock tests, I love turning complex ideas into elegant solutions. Based in Mahabubnagar, Telangana.
+            Computer Science Engineering graduate (B.Tech, 2026) with a strong foundation in software development, Python full-stack development, and Artificial Intelligence/Machine Learning. I have hands-on experience with Python, Django, Flask, REST API development, SQL, OpenCV, and LLM API integration. I have developed and deployed four end-to-end AI/ML projects, demonstrating practical skills in building real-world applications and intelligent solutions. I have also completed two industry internships specializing in AI/ML and Full Stack Python development. I am eager to apply my technical expertise, problem-solving abilities, and passion for continuous learning to innovative software engineering projects.
     </p>
   </div>
 </section>
@@ -642,6 +735,10 @@
           <span class="stack-tag">OpenCV</span>
           <span class="stack-tag">Computer Vision</span>
         </div>
+        <div class="project-actions">
+          <a href="https://drowsinessproject.vercel.app/" class="btn-primary" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a href="https://github.com/LAVANYAPATHLAVATH/drowsiness-project" class="btn-secondary" target="_blank" rel="noopener">GitHub Code ↗</a>
+        </div>
       </div>
 
       <div class="project-card fade-up">
@@ -659,6 +756,10 @@
           <span class="stack-tag">REST API</span>
           <span class="stack-tag">Speech Recognition</span>
         </div>
+        <div class="project-actions">
+          <a href="https://weather-project-six-livid.vercel.app/" class="btn-primary" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a href="https://github.com/LAVANYAPATHLAVATH/weather_" class="btn-secondary" target="_blank" rel="noopener">GitHub Code ↗</a>
+        </div>
       </div>
 
       <div class="project-card fade-up">
@@ -675,6 +776,10 @@
           <span class="stack-tag">Python</span>
           <span class="stack-tag">AI/ML</span>
           <span class="stack-tag">LLMs</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://mocktest-ai-nu.vercel.app/" class="btn-primary" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a href="https://github.com/LAVANYAPATHLAVATH/mocktest-ai" class="btn-secondary" target="_blank" rel="noopener">GitHub Code ↗</a>
         </div>
       </div>
 
@@ -694,6 +799,10 @@
           <span class="stack-tag">GPT</span>
           <span class="stack-tag">Gemini</span>
           <span class="stack-tag">Git</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://coderevieweraiproject.vercel.app/" class="btn-primary" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a href="https://github.com/LAVANYAPATHLAVATH/Coderevieweraiproject" class="btn-secondary" target="_blank" rel="noopener">GitHub Code ↗</a>
         </div>
       </div>
 
@@ -756,41 +865,90 @@
   </div>
 </section>
 
+
+<!-- ===== RESUME ===== -->
+<section id="resume">
+  <div class="container">
+    <p class="section-label fade-up">My Profile</p>
+    <h2 class="section-title fade-up">My Resume</h2>
+    <div class="divider fade-up"></div>
+    <div class="document-grid">
+      <div class="document-card fade-up">
+        <div class="document-icon">📄</div>
+        <h3>Pathlavath Lavanya — Resume</h3>
+        <p>View or download my professional resume.</p>
+        <div class="document-actions">
+          <a href="assets/resume/lavanya-pathlavath-resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a href="assets/resume/lavanya-pathlavath-resume.pdf" download>Download Resume</a>
+          <a href="https://portflio4-three.vercel.app/" target="_blank" rel="noopener">View Portfolio ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CERTIFICATIONS ===== -->
 <section id="certifications">
   <div class="container">
-    <p class="section-label fade-up">Recognition</p>
-    <h2 class="section-title fade-up">Certifications & Achievements</h2>
+    <p class="section-label fade-up">Achievements</p>
+    <h2 class="section-title fade-up">My Certificates</h2>
     <div class="divider fade-up"></div>
-    <div class="cert-list">
-      <div class="cert-item fade-up">
-        <div class="cert-icon">🏅</div>
-        <div>
-          <div class="cert-title">Certificate of Excellence — Student Ambassador Program</div>
-          <div class="cert-issuer">IIT Guwahati · April 2025</div>
+    <div class="document-grid">
+
+      <div class="document-card fade-up">
+        <div class="document-icon">🏅</div>
+        <h3>IIT Guwahati — Student Ambassador</h3>
+        <p>Student Ambassador Program · 2025</p>
+        <div class="document-actions">
+          <a href="assets/certificates/iit-guwahati-student-ambassador-2025.pdf" target="_blank" rel="noopener">View Certificate</a>
         </div>
       </div>
-      <div class="cert-item fade-up">
-        <div class="cert-icon">🎯</div>
-        <div>
-          <div class="cert-title">Career Guidance Webinar</div>
-          <div class="cert-issuer">Skill Dunia in collaboration with E-Cell IIT Hyderabad · July 2024</div>
+
+      <div class="document-card fade-up">
+        <div class="document-icon">🐍</div>
+        <h3>Python with AI & ML Internship</h3>
+        <p>Next Chapter · Wipro Collaboration · 2025</p>
+        <div class="document-actions">
+          <a href="assets/certificates/python-ai-ml-internship-next-chapter-wipro-2025.pdf" target="_blank" rel="noopener">View Certificate</a>
         </div>
       </div>
-      <div class="cert-item fade-up">
-        <div class="cert-icon">📐</div>
-        <div>
-          <div class="cert-title">Data Structures & Algorithms</div>
-          <div class="cert-issuer">The Digital Adda</div>
+
+      <div class="document-card fade-up">
+        <div class="document-icon">🤖</div>
+        <h3>AI Bootcamp</h3>
+        <p>SmartEd Innovations · 2025</p>
+        <div class="document-actions">
+          <a href="assets/certificates/ai-bootcamp-smarted-innovations-2025.pdf" target="_blank" rel="noopener">View Certificate</a>
         </div>
       </div>
-      <div class="cert-item fade-up">
-        <div class="cert-icon">🤖</div>
-        <div>
-          <div class="cert-title">Python with AI & ML</div>
-          <div class="cert-issuer">Next Chapter</div>
+
+      <div class="document-card fade-up">
+        <div class="document-icon">💻</div>
+        <h3>Python with AI & ML — Corporate Training</h3>
+        <p>Next Chapter · 2025</p>
+        <div class="document-actions">
+          <a href="assets/certificates/python-ai-ml-corporate-training-next-chapter-2025.pdf" target="_blank" rel="noopener">View Certificate</a>
         </div>
       </div>
+
+      <div class="document-card fade-up">
+        <div class="document-icon">🎓</div>
+        <h3>AAR Mahaveer Engineering College</h3>
+        <p>College Certificate</p>
+        <div class="document-actions">
+          <a href="assets/certificates/aar-mahaveer-college-certificate.pdf" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
+
+      <div class="document-card fade-up">
+        <div class="document-icon">🚀</div>
+        <h3>Full Stack Python Training with Internship</h3>
+        <p>Verso Technologies · 2026</p>
+        <div class="document-actions">
+          <a href="assets/certificates/verso-full-stack-python-training-internship-2026.jpeg" target="_blank" rel="noopener">View Certificate</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
